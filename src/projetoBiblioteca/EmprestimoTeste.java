@@ -35,60 +35,66 @@ public class EmprestimoTeste {
 				new Exemplar(listAutores.get(1), "boas praticas", "2018", 4, "edit", "54719", 1, 1782, true, true));
 
 		// System.out.println(pesquisarExemplar("Ciclano", listExamplares));
-		/*System.out.println("Oque voçê Deseja fazer:");
-		System.out.println("Digite 1 - Cadastrar Usuario!");
-		System.out.println("Digite 2 - Consultar Autor/Livro!");
-		System.out.println("Digite 3 - Realizar Emprestimo!");
-		System.out.println("Digite 4 - Realizar Devolução!");
-		System.out.println("Digite 0 - Para Encerrar!");*/
+		/*
+		 * System.out.println("Oque voçê Deseja fazer:");
+		 * System.out.println("Digite 1 - Cadastrar Usuario!");
+		 * System.out.println("Digite 2 - Consultar Autor/Livro!");
+		 * System.out.println("Digite 3 - Realizar Emprestimo!");
+		 * System.out.println("Digite 4 - Realizar Devolução!");
+		 * System.out.println("Digite 0 - Para Encerrar!");
+		 */
 
-		//int valor = input.nextInt();
+		// int valor = input.nextInt();
 
-		/* switch (valor) {
-		case 1:
-			System.out.println("Digite o nome do usuario:");
-			String nome = input.next();
-			System.out.println("Digite o numero do cpf");
-			int cpf = input.nextInt();
-			System.out.println("Digite o telefone do usuario:");
-			String telefone = input.next();
-			System.out.println("Digite a matricula do usuario:");
-			String matricula = input.next();
+		/*
+		 * switch (valor) {
+		 * case 1:
+		 * System.out.println("Digite o nome do usuario:");
+		 * String nome = input.next();
+		 * System.out.println("Digite o numero do cpf");
+		 * int cpf = input.nextInt();
+		 * System.out.println("Digite o telefone do usuario:");
+		 * String telefone = input.next();
+		 * System.out.println("Digite a matricula do usuario:");
+		 * String matricula = input.next();
+		 * 
+		 * listUsuarios.add(new Usuario(nome, cpf, telefone, matricula));
+		 * 
+		 * System.out.println("Usuario Criado com sucesso!");
+		 * break;
+		 * 
+		 * case 2:
+		 * System.out.
+		 * println("Digite o nome do Autor ou do livro que você que consultar:");
+		 * String textDigitado = input.next();
+		 * System.out.println(pesquisarExemplar(textDigitado, listExemplares));
+		 * break;
+		 * 
+		 * case 3:
+		 * System.out.println("Digite o nome do usuario:");
+		 * String nomeUsuario = input.next();
+		 * System.out.println("Digite o exemplar:");
+		 * String exemplar = input.next();
+		 * System.out.println("Digite a data de devolução");
+		 * String dataDevolução = input.next();
+		 * break;
+		 * 
+		 * //boolean verificarUsuario;
+		 * 
+		 * if(verificarUsuario(nomeUsuario, listUsuarios) && verificarExemplar(exemplar,
+		 * listExemplares )) {
+		 * listEmprestimo.add(new Emprestimo(nomeUsuario, listExemplares.get(1),
+		 * "656", "4797");
+		 * 
+		 * }
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * }
+		 */
 
-			listUsuarios.add(new Usuario(nome, cpf, telefone, matricula));
-
-			System.out.println("Usuario Criado com sucesso!");
-			break;
-
-		case 2:
-			System.out.println("Digite o nome do Autor ou do livro que você que consultar:");
-			String textDigitado = input.next();
-			System.out.println(pesquisarExemplar(textDigitado, listExemplares));
-			break;
-
-		case 3:
-			System.out.println("Digite o nome do usuario:");
-			String nomeUsuario = input.next();
-			System.out.println("Digite o exemplar:");
-			String exemplar = input.next();
-			System.out.println("Digite a data de devolução");
-			String dataDevolução = input.next();
-			break;
-			
-			//boolean verificarUsuario;
-			
-			 if(verificarUsuario(nomeUsuario, listUsuarios) && verificarExemplar(exemplar, listExemplares )) {
-				listEmprestimo.add(new Emprestimo(nomeUsuario, listExemplares.get(1),
-					"656", "4797");
-				
-			}
-			
-			
-			
-			
-
-		} */
-		
 		System.out.println("Implementado testes Unitarios");
 
 		// System.out.println(pesquisarExemplar("livro 10", listExamplares));
@@ -99,16 +105,17 @@ public class EmprestimoTeste {
 		// testando
 		Emprestimo emp1 = new Emprestimo(listUsuarios.get(0), listExemplares.get(1), "06/08/20222", "21/08/2022");
 		Emprestimo emp2 = new Emprestimo(listUsuarios.get(1), listExemplares.get(1), "06/08/20222", "21/08/2022");
-		//Emprestimo emp3 = new Emprestimo(listUsuarios.get(1), listExemplares.get(6), "06/08/20222", "21/08/2022");
+		// Emprestimo emp3 = new Emprestimo(listUsuarios.get(1), listExemplares.get(6),
+		// "06/08/20222", "21/08/2022");
 
 		// verificando exemplar depois do empréstimo
 		System.out.println(listExemplares.get(1));
 
 		// Devolvendo
-		 emp1.Devolver();
+		emp1.Devolver();
 
 		// verificando exemplar depois da devolução
-		 System.out.println(listExemplares.get(1));
+		System.out.println(listExemplares.get(1));
 
 		input.close();
 
@@ -124,29 +131,29 @@ public class EmprestimoTeste {
 		return "Este Exemplar não está disponivel!";
 
 	}
-	public static boolean verificarUsuario(String text,ArrayList<Usuario> list) {
-		for(int i = 0; i< list.size(); i++) {
-			if(list.get(i).getNome() == text) {
+
+	public static boolean verificarUsuario(String text, ArrayList<Usuario> list) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getNome() == text) {
 				return true;
-				
+
 			}
-			
+
 		}
 		return false;
-		
-		
+
 	}
-	public static boolean verificarExemplar(String text,ArrayList<Exemplar> list) {
-		for(int i = 0; i< list.size(); i++) {
-			if(list.get(i).getTitulo() == text) {
+
+	public static boolean verificarExemplar(String text, ArrayList<Exemplar> list) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getTitulo() == text) {
 				return true;
-				
+
 			}
-			
+
 		}
 		return false;
-		
-		
+
 	}
 
 };
