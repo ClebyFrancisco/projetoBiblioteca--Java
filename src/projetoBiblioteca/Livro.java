@@ -1,6 +1,6 @@
 package projetoBiblioteca;
 
-public class Livro  {
+public class Livro {
 	private String titulo;
 	private Autor autor;
 
@@ -8,7 +8,7 @@ public class Livro  {
 	private int edicao;
 	private String editora;
 	private String isbn;
-	
+
 	public Livro(Autor autor, String titulo, String ano, int edicao, String editora, String isbn) {
 		super();
 		this.autor = autor;
@@ -17,7 +17,7 @@ public class Livro  {
 		this.edicao = edicao;
 		this.editora = editora;
 		this.isbn = isbn;
-		
+
 	}
 
 	public String getTitulo() {
@@ -68,5 +68,4 @@ public class Livro  {
 		this.isbn = isbn;
 	}
 
-	
 }

@@ -1,6 +1,7 @@
 package projetoBiblioteca;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class EmprestimoTeste {
@@ -10,7 +11,7 @@ public class EmprestimoTeste {
 		ArrayList<Usuario> listUsuarios = new ArrayList<Usuario>();
 		ArrayList<Exemplar> listExemplares = new ArrayList<Exemplar>();
 		ArrayList<Autor> listAutores = new ArrayList<Autor>();
-		ArrayList<Emprestimo> listEmprestimo = new ArrayList<Emprestimo>();
+		//ArrayList<Emprestimo> listEmprestimo = new ArrayList<Emprestimo>();
 
 		// criando usuario
 		listUsuarios.add(new Usuario("Fulano", 15455489, "125487525", "17187"));
@@ -25,75 +26,11 @@ public class EmprestimoTeste {
 		listAutores.add(new Autor("Fulano"));
 
 		// criando exemplar
-		listExemplares
-				.add(new Exemplar(listAutores.get(0), "A Cabana", "2018", 4, "edit", "54719", 1, 142, true, true));
+		listExemplares.add(new Exemplar(listAutores.get(0), "A Cabana", "2018", 4, "edit", "54719", 1, 142, true, true));
 		listExemplares.add(new Exemplar(listAutores.get(2), "livro 2", "2018", 4, "edit", "54719", 1, 172, true, true));
 		listExemplares.add(new Exemplar(listAutores.get(3), "livro 3", "2018", 4, "edit", "54719", 1, 187, true, true));
-		listExemplares
-				.add(new Exemplar(listAutores.get(4), "livro 4", "2018", 4, "edit", "54719", 2, 17872, true, true));
-		listExemplares.add(
-				new Exemplar(listAutores.get(1), "boas praticas", "2018", 4, "edit", "54719", 1, 1782, true, true));
-
-		// System.out.println(pesquisarExemplar("Ciclano", listExamplares));
-		/*
-		 * System.out.println("Oque voçê Deseja fazer:");
-		 * System.out.println("Digite 1 - Cadastrar Usuario!");
-		 * System.out.println("Digite 2 - Consultar Autor/Livro!");
-		 * System.out.println("Digite 3 - Realizar Emprestimo!");
-		 * System.out.println("Digite 4 - Realizar Devolução!");
-		 * System.out.println("Digite 0 - Para Encerrar!");
-		 */
-
-		// int valor = input.nextInt();
-
-		/*
-		 * switch (valor) {
-		 * case 1:
-		 * System.out.println("Digite o nome do usuario:");
-		 * String nome = input.next();
-		 * System.out.println("Digite o numero do cpf");
-		 * int cpf = input.nextInt();
-		 * System.out.println("Digite o telefone do usuario:");
-		 * String telefone = input.next();
-		 * System.out.println("Digite a matricula do usuario:");
-		 * String matricula = input.next();
-		 * 
-		 * listUsuarios.add(new Usuario(nome, cpf, telefone, matricula));
-		 * 
-		 * System.out.println("Usuario Criado com sucesso!");
-		 * break;
-		 * 
-		 * case 2:
-		 * System.out.
-		 * println("Digite o nome do Autor ou do livro que você que consultar:");
-		 * String textDigitado = input.next();
-		 * System.out.println(pesquisarExemplar(textDigitado, listExemplares));
-		 * break;
-		 * 
-		 * case 3:
-		 * System.out.println("Digite o nome do usuario:");
-		 * String nomeUsuario = input.next();
-		 * System.out.println("Digite o exemplar:");
-		 * String exemplar = input.next();
-		 * System.out.println("Digite a data de devolução");
-		 * String dataDevolução = input.next();
-		 * break;
-		 * 
-		 * //boolean verificarUsuario;
-		 * 
-		 * if(verificarUsuario(nomeUsuario, listUsuarios) && verificarExemplar(exemplar,
-		 * listExemplares )) {
-		 * listEmprestimo.add(new Emprestimo(nomeUsuario, listExemplares.get(1),
-		 * "656", "4797");
-		 * 
-		 * }
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * }
-		 */
+		listExemplares.add(new Exemplar(listAutores.get(4), "livro 4", "2018", 4, "edit", "54719", 2, 17872, true, true));
+		listExemplares.add(new Exemplar(listAutores.get(1), "boas praticas", "2018", 4, "edit", "54719", 1, 1782, true, true));
 
 		System.out.println("Implementado testes Unitarios");
 
@@ -118,6 +55,13 @@ public class EmprestimoTeste {
 		System.out.println(listExemplares.get(1));
 
 		input.close();
+		
+		//Casos de teste
+		System.out.println(pesquisarExemplar("Ciclano", listExemplares));
+		System.out.println(pesquisarExemplar("Fulano", listExemplares));
+		System.out.println(pesquisarExemplar("Lauro", listExemplares));
+		System.out.println(pesquisarExemplar("A Cabana", listExemplares));
+		
 
 	};
 
@@ -155,5 +99,4 @@ public class EmprestimoTeste {
 		return false;
 
 	}
-
 };
