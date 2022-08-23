@@ -86,13 +86,15 @@ public class Main {
 
 			System.out.println("Informe o nome do exemplar que deseja COMPRAR: ");
 			String exemplar = input.next();
-			
-			Compra comp = new Compra(dataUsuarios.get(cpf), dataExemplares.get(exemplar), "21/08/2022");
-			System.out.println(comp.toString());
+			if (dataExemplares.get(exemplar).getQtdd() > 0) {
+				Compra comp = new Compra(dataUsuarios.get(cpf), dataExemplares.get(exemplar), "21/08/2022");
+				System.out.println(comp.toString());
+			} else {
+				System.out.println("Exemplar indisponivel!");
+			}
 		}
 			
 		} while (resposta != 4); // SAIR
-		
 		
 		
 //		// criando usuario
