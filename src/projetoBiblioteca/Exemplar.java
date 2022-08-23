@@ -44,6 +44,10 @@ public class Exemplar extends Livro {
 	public int getQtdd() {
 		return qtdd;
 	}
+	
+	public void settQtdd(int qtdd) {
+		this.qtdd = qtdd;
+	}
 
 	public void setCod(int cod) {
 		this.cod = cod;

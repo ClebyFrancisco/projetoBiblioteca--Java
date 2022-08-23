@@ -23,7 +23,14 @@ public class Emprestimo {
 	public void Devolver() {
 		exemplar.Devolver();
 		System.out.println("Devolvido com sucesso!");
-
 	}
+
+	@Override
+	public String toString() {
+		return "Emprestimo [dataEmprestimo=" + dataEmprestimo + ", dataPrevDevolucao=" + dataPrevDevolucao
+				+ ", dataEntregaReal=" + dataEntregaReal + ", situacao=" + situacao + ", usuario=" + usuario
+				+ ", exemplar=" + exemplar + "]";
+	}
+	
 
 }

@@ -2,11 +2,11 @@ package projetoBiblioteca;
 
 public class Usuario {
 	private String nome;
-	private int cpf;
+	private String cpf;
 	private String tel;
 	private String matricula;
 
-	public Usuario(String nome, int cpf, String tel, String matricula) {
+	public Usuario(String nome, String cpf, String tel, String matricula) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -22,11 +22,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -46,7 +46,7 @@ public class Usuario {
 		this.matricula = matricula;
 	}
 
-	public String exibir() {
+	public String toString() {
 		return "Usuario [nome=" + nome + ", cpf=" + cpf + ", tel=" + tel + ", matricula=" + matricula + "]";
 	}
 
