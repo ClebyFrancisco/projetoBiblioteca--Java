@@ -19,6 +19,10 @@ public class Main {
 		Map<String, Exemplar> dataExemplares = new HashMap<String, Exemplar>();
 		Map<String, Autor> dataAutores = new HashMap<String, Autor>();
 		
+		// criando usuarios
+		dataUsuarios.put("111", new Usuario("Fulano", "111", "125487525", "17187"));
+		dataUsuarios.put("222", new Usuario("Beltrano", "222", "125491879", "17125287"));
+		
 		// criando autores
 		dataAutores.put("Ciclano", new Autor("Ciclano"));
 		dataAutores.put("Beltrano", new Autor("Beltrano"));
@@ -27,11 +31,11 @@ public class Main {
 		dataAutores.put("Fulano", new Autor("Fulano"));
 		
 		// criando exemplar
-		dataExemplares.put("livro1", new Exemplar(dataAutores.get("Ciclano"), "livro1", "2018", 4, "edit", "54719", 1, 142, true, true));
-		dataExemplares.put("livro2", new Exemplar(dataAutores.get("Beltrano"), "livro2", "2018", 4, "edit", "54719", 1, 172, true, true));
-		dataExemplares.put("livro3", new Exemplar(dataAutores.get("Deltrano"), "livro3", "2018", 4, "edit", "54719", 1, 187, true, true));
-		dataExemplares.put("livro4", new Exemplar(dataAutores.get("Elano"), "livro4", "2018", 4, "edit", "54719", 2, 17872, true, true));
-		dataExemplares.put("livro5", new Exemplar(dataAutores.get("Fulano"), "livro5", "2018", 4, "edit", "54719", 1, 1782, true, true));
+		dataExemplares.put("livro1", new Exemplar(dataAutores.get("Ciclano"), "livro1", "2018", 4, "edit", "54719", 1, 142));
+		dataExemplares.put("livro2", new Exemplar(dataAutores.get("Beltrano"), "livro2", "2018", 4, "edit", "54719", 1, 172));
+		dataExemplares.put("livro3", new Exemplar(dataAutores.get("Deltrano"), "livro3", "2018", 4, "edit", "54719", 1, 187));
+		dataExemplares.put("livro4", new Exemplar(dataAutores.get("Elano"), "livro4", "2018", 4, "edit", "54719", 2, 17872));
+		dataExemplares.put("livro5", new Exemplar(dataAutores.get("Fulano"), "livro5", "2018", 4, "edit", "54719", 1, 1782));
 			
 		int resposta;
 		
@@ -68,9 +72,12 @@ public class Main {
 
 			System.out.println("Informe o nome do exemplar que deseja PEGAR EMPRESTADO: ");
 			String exemplar = input.next();
-			
-			Emprestimo emp = new Emprestimo(dataUsuarios.get(cpf), dataExemplares.get(exemplar), "06/08/20222", "21/08/2022");
-			System.out.println(emp.toString());
+			if (dataExemplares.get(exemplar).getQtdd() > 0) {
+				Emprestimo emp = new Emprestimo(dataUsuarios.get(cpf), dataExemplares.get(exemplar), "06/08/20222", "21/08/2022");
+				System.out.println(emp.toString());
+			} else { 
+				System.out.println("Exemplar indisponivel!");
+			}
 
 		// COMPRAR LIVRO
 		} else if (resposta == 3) { 

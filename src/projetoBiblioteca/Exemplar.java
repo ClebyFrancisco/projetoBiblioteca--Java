@@ -11,21 +11,18 @@ public class Exemplar extends Livro {
 
 	ArrayList<Exemplar> list = new ArrayList<Exemplar>();
 
-	public Exemplar(Autor autor, String titulo, String ano, int edicao, String editora, String isbn, int qtdd, int cod,
-			boolean cativa, boolean emprestado) {
+	public Exemplar(Autor autor, String titulo, String ano, int edicao, String editora, String isbn, int qtdd, int cod) {
 		super(autor, titulo, ano, edicao, editora, isbn);
 		this.qtdd = qtdd;
 		this.cod = cod;
-		this.cativa = cativa;
-		this.emprestado = emprestado;
-		// this.list.add(new Exemplar(autor,titulo, ano, edicao, editora, isbn, qtdd,
-		// cod, cativa, emprestado) );
-
+		this.cativa = false;
+		this.emprestado = false;
 	}
 
 	public String pegarEmprestado() {
 		if (qtdd > 0) {
 			qtdd -= 1;
+			this.emprestado = true;
 			return "Emprestimo Realizado com sucesso!";
 
 		}
@@ -35,6 +32,7 @@ public class Exemplar extends Livro {
 
 	public void Devolver() {
 		this.qtdd += 1;
+		this.emprestado = false;
 	}
 
 	public int getCod() {

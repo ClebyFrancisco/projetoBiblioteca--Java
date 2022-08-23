@@ -11,13 +11,11 @@ public class Emprestimo {
 
 	public Emprestimo(Usuario usuario, Exemplar exemplar, String dataEmprestimo, String dataPrevDevolucao) {
 		super();
+		System.out.println(exemplar.pegarEmprestado());
 		this.dataEmprestimo = dataEmprestimo;
 		this.dataPrevDevolucao = dataPrevDevolucao;
 		this.usuario = usuario;
 		this.exemplar = exemplar;
-
-		System.out.println(exemplar.pegarEmprestado());
-
 	}
 
 	public void Devolver() {
