@@ -1,7 +1,12 @@
 package br.com.biblioteca.projetoBibliotecaMv;
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class Usuario {
+	
+	public static Map<String, Usuario> dataUsuarios = new HashMap<String, Usuario>();
+	
 	private String nome;
 	private String cpf;
 	private String tel;

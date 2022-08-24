@@ -1,9 +1,13 @@
 package br.com.biblioteca.projetoBibliotecaMv;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Exemplar extends Livro {
-
+	
+	public static Map<String, Exemplar> dataExemplares = new HashMap<String, Exemplar>();
+	
 	private int qtdd;
 	private int cod;
 	private boolean cativa;

@@ -1,6 +1,11 @@
 package br.com.biblioteca.projetoBibliotecaMv;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Autor {
+	
+	public static Map<String, Autor> dataAutores = new HashMap<String, Autor>();
 	
 	private String nome;
 
