@@ -1,4 +1,4 @@
-package br.com.biblioteca.projetoBibliotecaMv;
+package br.com.biblioteca.projetoBibliotecaMv.models;
 
 public class Compra {
 	

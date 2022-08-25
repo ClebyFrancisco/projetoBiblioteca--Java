@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import br.com.biblioteca.projetoBibliotecaMv.models.Autor;
+import br.com.biblioteca.projetoBibliotecaMv.models.Compra;
+import br.com.biblioteca.projetoBibliotecaMv.models.Emprestimo;
+import br.com.biblioteca.projetoBibliotecaMv.models.Exemplar;
+import br.com.biblioteca.projetoBibliotecaMv.models.Usuario;
+
 public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
