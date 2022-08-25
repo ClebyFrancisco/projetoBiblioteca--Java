@@ -13,8 +13,6 @@ public class Exemplar extends Livro {
 	private boolean cativa;
 	private boolean emprestado;
 
-	ArrayList<Exemplar> list = new ArrayList<Exemplar>();
-
 	public Exemplar(Autor autor, String titulo, String ano, int edicao, String editora, String isbn, int qtdd, int cod) {
 		super(autor, titulo, ano, edicao, editora, isbn);
 		this.qtdd = qtdd;
@@ -73,8 +71,7 @@ public class Exemplar extends Livro {
 
 	@Override
 	public String toString() {
-		return "Exemplar [qtdd=" + qtdd + ", cod=" + cod + ", cativa=" + cativa + ", emprestado=" + emprestado
-				+ ", list=" + list + "]";
+		return "Exemplar [qtdd=" + qtdd + ", cod=" + cod + ", cativa=" + cativa + ", emprestado=" + emprestado + "]";
 	}
 
 }
