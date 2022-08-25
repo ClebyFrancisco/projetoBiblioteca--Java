@@ -1,25 +1,31 @@
 package br.com.biblioteca.projetoBibliotecaMv;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class Controller {
 
-//	@GetMapping("/usuarios")
-//	public String getUsuarios() {
-//		String json = new ObjectMapper().writeValueAsString(Usuario.dataUsuarios);
-//		return json;
-//	}
-
-	
 	// USUARIOS 
+	@GetMapping("/usuarios")
+	@ResponseBody
+	public List<Usuario> getUsuarios() {
+		List<Usuario> list = new ArrayList<Usuario>(Usuario.dataUsuarios.values());
+	    return list;
+	}
+	
 	@PostMapping("/usuario/verificar")
 	public String verificarUsuario(@RequestBody Usuario a) {
 		if (Usuario.dataUsuarios.containsKey(a.getCpf())) {
@@ -41,6 +47,13 @@ public class Controller {
 	
 	
 	// AUTORES
+	@GetMapping("/autores")
+	@ResponseBody
+	public List<Autor> getAutores() {
+		List<Autor> list = new ArrayList<Autor>(Autor.dataAutores.values());
+	    return list;
+	}
+	
 	@PostMapping("/autor/verificar")
 	public String verificarAutor(@RequestBody Autor a) {
 		if (Autor.dataAutores.containsKey(a.getNome())) {
@@ -62,6 +75,13 @@ public class Controller {
 	
 	
 	// EXEMPLARES
+	@GetMapping("/exemplares")
+	@ResponseBody
+	public List<Exemplar> getExemplares() {
+		List<Exemplar> list = new ArrayList<Exemplar>(Exemplar.dataExemplares.values());
+	    return list;
+	}
+	
 	@PostMapping("/exemplar/verificar")
 	public String verificarExemplar(@RequestBody Exemplar a) {
 		if (Exemplar.dataExemplares.containsKey(a.getTitulo())) {
@@ -80,8 +100,6 @@ public class Controller {
 			 return "Exemplar cadastrado com sucesso!";
 		}
 	}
-	
-	
 	
 	
 }
