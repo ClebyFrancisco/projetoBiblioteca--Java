@@ -1,25 +1,27 @@
 package br.com.biblioteca.projetoBibliotecaMv.models;
 
+import java.time.LocalDate;
+
 public class Compra {
 	
 	
-	String dataCompra;
+	LocalDate dataCompra;
 	Usuario usuario;
 	Exemplar exemplar;
+	float valor;
 
 
-	public Compra(Usuario usuario, Exemplar exemplar, String dataCompra) {
+	public Compra(Usuario usuario, Exemplar exemplar) {
 		super();
-		this.dataCompra = dataCompra;
+		this.dataCompra = LocalDate.now();
 		this.usuario = usuario;
 		this.exemplar = exemplar;
-		this.Comprar();
 	}
 
-
-	public void Comprar() {
-		if (this.exemplar.getQtdd() > 0) {
-			this.exemplar.settQtdd(this.exemplar.getQtdd() - 1);
-		}
+	@Override
+	public String toString() {
+		return "Compra [dataCompra=" + dataCompra + ", usuario=" + usuario + ", exemplar=" + exemplar + ", valor="
+				+ valor + "]";
 	}
+	
 }
