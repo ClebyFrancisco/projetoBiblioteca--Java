@@ -1,6 +1,5 @@
 package br.com.biblioteca.projetoBibliotecaMv.models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,13 +11,15 @@ public class Exemplar extends Livro {
 	private int cod;
 	private boolean cativa;
 	private boolean emprestado;
+	private double valor;
 
-	public Exemplar(Autor autor, String titulo, String ano, int edicao, String editora, String isbn, int qtdd, int cod) {
+	public Exemplar(Autor autor, String titulo, String ano, int edicao, String editora, String isbn, int qtdd, int cod, double valor) {
 		super(autor, titulo, ano, edicao, editora, isbn);
 		this.qtdd = qtdd;
 		this.cod = cod;
 		this.cativa = false;
 		this.emprestado = false;
+		this.valor = valor;
 	}
 
 	public String pegarEmprestado() {
@@ -37,16 +38,16 @@ public class Exemplar extends Livro {
 		this.emprestado = false;
 	}
 
-	public int getCod() {
-		return cod;
-	}
-
 	public int getQtdd() {
 		return qtdd;
 	}
-	
-	public void settQtdd(int qtdd) {
+
+	public void setQtdd(int qtdd) {
 		this.qtdd = qtdd;
+	}
+
+	public int getCod() {
+		return cod;
 	}
 
 	public void setCod(int cod) {
@@ -67,6 +68,14 @@ public class Exemplar extends Livro {
 
 	public void setEmprestado(boolean emprestado) {
 		this.emprestado = emprestado;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
 
 	@Override
