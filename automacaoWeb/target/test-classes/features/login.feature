@@ -9,7 +9,7 @@
     @login-success
     Scenario: Login successfully
       Given I'm on the login screen
-      When I fill in login "thebigbangqa@cognizant.com.com" and password "123456"
+      When I fill in login "thebigbangqa@cognizant.com" and password "123456"
       And  click on Login
       Then  I'm logged into the application
 
